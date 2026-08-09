@@ -8,7 +8,7 @@ Specification generation belongs elsewhere. Workflow skills consume specificatio
 
 Reachable only when you type them (Claude Code: `disable-model-invocation: true`; Codex: `policy.allow_implicit_invocation: false` in `agents/openai.yaml`).
 
-* **implement** — Implement work from a spec or tickets: branch, build, verify, then commit via the commit skill.
+* **implement** — Implement work from a spec or tickets: branch, build, verify, commit via the commit skill, then open/update the PR via the to-pr skill.
 
 ## Model-invoked
 
