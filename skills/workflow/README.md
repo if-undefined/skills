@@ -15,3 +15,4 @@ Reachable only when you type them (Claude Code: `disable-model-invocation: true`
 Model- or user-reachable (rich trigger phrasing so the model can reach for them).
 
 * **commit** — Commit or prepare commit batches.
+* **to-pr** — Create a PR from the committed branch diff or update an existing PR description.
