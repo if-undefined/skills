@@ -1,0 +1,5 @@
+interface:
+  display_name: "PR create/update"
+  short_description: "Open or update a GitHub PR with a filled description"
+policy:
+  allow_implicit_invocation: true

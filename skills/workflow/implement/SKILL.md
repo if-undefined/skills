@@ -17,3 +17,6 @@ disable-model-invocation: true
 
 4. **Commit** — Commit completed slices with the `/commit` skill (required — do not commit outside it). Repeat until all intended changes are committed.
    - Done when: `git status` shows a clean tree for the intended work.
+
+5. **PR** — Open or update the pull request with the `/to-pr` skill (required — do not create or edit PRs outside it).
+   - Done when: `/to-pr` has returned the PR URL.
