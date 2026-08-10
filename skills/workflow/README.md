@@ -1,18 +1,18 @@
 # Workflow
 
-Skills that carry software changes through the repository workflow: implementing an already-produced specification, organizing and committing changes, and creating pull requests.
+The intended use of these skills is to allow an agent to deterministically implement a well-defined specification or ticket, up to the point of code-review. Implement from a spec or tickets, verify, commit, and create a PR for review.
 
-Specification generation belongs elsewhere. Workflow skills consume specifications and manage implementation and delivery.
+This workflow begins with a well-defined specification or ticket. Specification generation sits outside this folder.
 
-## User-invoked
+## User Invoked
 
-Reachable only when you type them (Claude Code: `disable-model-invocation: true`; Codex: `policy.allow_implicit_invocation: false` in `agents/openai.yaml`).
+Run explicitly by the user.
 
-* **implement** — Implement work from a spec or tickets: branch, build, verify, commit via the commit skill, then open/update the PR via the to-pr skill.
+* **implement** — Branch, build, verify, commit, and create a PR for your review.
 
-## Model-invoked
+## Model Invoked
 
-Model- or user-reachable (rich trigger phrasing so the model can reach for them).
+Available to both the workflow and the user when needed.
 
 * **commit** — Commit or prepare commit batches.
-* **to-pr** — Create a PR from the committed branch diff or update an existing PR description.
+* **to-pr** — Create or update a GitHub PR for review.
