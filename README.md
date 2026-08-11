@@ -16,31 +16,17 @@ The intended use of these skills is to allow an agent to deterministically imple
 
 This workflow depends on a collection of well-defined specifications or tickets for an agent to begin implementing.
 
-I would recommend using [grill-with-docs](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md) until you have a shared understanding of your application and the feature or task you wish to implement.
-
-To quickly get started, the following will install the required skill and its dependencies:
-
-```
-pnpm dlx skills@latest add mattpocock/skills \ 
-  --skill grill-with-docs \
-  --skill grilling \
-  --skill domain-modeling \
-  --skill to-spec \
-  --skill to-tickets \
-  --skill setup-matt-pocock-skills \
-  -y
-```
-
-First, run `setup-matt-pocock-skills` and then `grill-with-docs`.
+Run [**bootstrap-planning-skills**](skills/workflow/bootstrap-planning-skills) in your target repo to install Matt Pocock's planning skills (grill → spec → tickets), configure the repo via `/setup-matt-pocock-skills`, and document the pipeline in `AGENTS.md`. Delivery stays in the workflow skills below.
 
 #### User Invoked
 
-  * [**implement**](skills/implement) — Branch, build, verify, commit and create a PR for your review.
+  * [**bootstrap-planning-skills**](skills/workflow/bootstrap-planning-skills) — Bootstrap a target repo with Matt Pocock's planning pipeline.
+  * [**implement**](skills/workflow/implement) — Branch, build, verify, commit and create a PR for your review.
 
 #### Model Invoked
 
-  * [**commit**](skills/commit) — Commit or prepare commit batches.
-  * [**to-pr**](skills/to-pr) - Create or update an PR in Github for review.
+  * [**commit**](skills/workflow/commit) — Commit or prepare commit batches.
+  * [**to-pr**](skills/workflow/to-pr) - Create or update an PR in Github for review.
 
 
 ## Installation
