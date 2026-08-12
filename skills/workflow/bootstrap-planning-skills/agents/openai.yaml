@@ -1,0 +1,5 @@
+interface:
+  display_name: "Bootstrap planning skills"
+  short_description: "Install Matt Pocock planning skills and configure the grill → spec → tickets pipeline."
+policy:
+  allow_implicit_invocation: false
