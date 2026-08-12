@@ -54,16 +54,7 @@ All installs and writes happen in the target repo — not in `if-undefined/skill
    Merge in-place if `### Skill workflows` already exists. Do not duplicate or overwrite `/setup-matt-pocock-skills`' subsections.
    - Done when: the workflows section is present and references `/implement` (not inline implementation steps).
 
-5. **GitHub label** — Attempt:
-
-   ```bash
-   gh label create ready-for-agent --description "Spec or ticket is ready for an agent to implement" --color "0E8A16"
-   ```
-
-   If the label already exists or API permissions fail (403), report as a manual follow-up — do not fail the skill.
-   - Done when: the label exists or the user is told to create it in repo settings.
-
-6. **Report** — Summarize what was bootstrapped, that config was produced by `/setup-matt-pocock-skills`, the planning pipeline (`grill → spec → tickets → implement`), and any manual follow-ups (label, optional `triage` skill later).
+5. **Report** — Summarize what was bootstrapped, that config was produced by `/setup-matt-pocock-skills`, the planning pipeline (`grill → spec → tickets → implement`), and any manual follow-ups (optional `triage` skill later).
    - Done when: the user knows how to start the pipeline.
 
 ## Guardrails
