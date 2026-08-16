@@ -10,21 +10,19 @@ I've split these skills into use-cases and in most cases, will depend on another
 
 ### Workflow
 
-The intended use of these skills is to allow an agent to deterministically implement a well-defined specification or ticket, up to the point of code-review. Implement from a spec or tickets, verify, and commit.
+Deterministic delivery up to code review: branch, build, verify, commit, and open a PR. Agents should defer to **implement** when making substantive code or configuration changes in a repository.
 
 #### Prerequisites
 
-This workflow depends on a collection of well-defined specifications or tickets for an agent to begin implementing.
-
-Run [**bootstrap-planning-skills**](skills/workflow/bootstrap-planning-skills) in your target repo to install Matt Pocock's planning skills (grill → spec → tickets), configure the repo via `/setup-matt-pocock-skills`, and document the pipeline in `AGENTS.md`. Delivery stays in the workflow skills below.
+Optional planning upfront: run [**bootstrap-planning-skills**](skills/workflow/bootstrap-planning-skills) in your target repo to install Matt Pocock's planning skills (grill → spec → tickets), configure the repo via `/setup-matt-pocock-skills`, and document the pipeline in `AGENTS.md`. Delivery stays in the workflow skills below.
 
 #### User Invoked
 
   * [**bootstrap-planning-skills**](skills/workflow/bootstrap-planning-skills) — Bootstrap a target repo with Matt Pocock's planning pipeline.
-  * [**implement**](skills/workflow/implement) — Branch, build, verify, commit and create a PR for your review.
 
 #### Model Invoked
 
+  * [**implement**](skills/workflow/implement) — Branch, build, verify, commit, and create a PR for review.
   * [**commit**](skills/workflow/commit) — Commit or prepare commit batches.
   * [**to-pr**](skills/workflow/to-pr) - Create or update an PR in Github for review.
 
