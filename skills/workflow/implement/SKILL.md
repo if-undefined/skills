@@ -1,9 +1,8 @@
 ---
 name: implement
 description: >-
-  Implement substantive code or configuration changes (features, bugfixes,
-  config) via branch, build, verify, commit, and PR. Use when making those
-  changes in a repository, including from a spec or tickets.
+  Implement tickets or a spec through to a pull request. Also use for
+  substantive code or configuration changes without one.
 ---
 
 # Implement
@@ -11,8 +10,8 @@ description: >-
 1. **Branch** — If the current branch is `master` or `main`, create and check out a new branch named from the ticket id plus a short kebab slug when a ticket exists (e.g. `42-add-login`); otherwise a kebab slug from the change intent.
    - Done when: HEAD is not on `master`/`main`, and the branch name matches that pattern.
 
-2. **Build** — Implement the requested change until it is satisfied. Prefer the narrowest change that does so. Criteria come from the user's ask, and from a spec, tickets, or linked issue when present.
-   - Done when: every stated criterion is satisfied (or explicitly deferred by the user).
+2. **Build** — Implement against the tickets or spec until their acceptance criteria are met. Prefer the narrowest change that satisfies them. When neither is present, implement the user's ask the same way.
+   - Done when: every acceptance criterion (or stated ask) is satisfied (or explicitly deferred by the user).
 
 3. **Verify** — Discover the project's checks from the environment (package scripts, Makefile, CI config — e.g. tests, lints, typecheck, build) and run them after each substantive slice, and once more when the build step is complete.
    - Done when: every check the project defines has been run and passes.

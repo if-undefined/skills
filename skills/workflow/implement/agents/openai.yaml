@@ -1,5 +1,5 @@
 interface:
   display_name: "Implement"
-  short_description: "Implement code or config changes via branch, build, verify, commit, and PR."
+  short_description: "Implement tickets or a spec through to a pull request."
 policy:
   allow_implicit_invocation: true

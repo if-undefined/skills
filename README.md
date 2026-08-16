@@ -10,7 +10,7 @@ I've split these skills into use-cases and in most cases, will depend on another
 
 ### Workflow
 
-Deterministic delivery up to code review: branch, build, verify, commit, and open a PR. Agents should defer to **implement** when making substantive code or configuration changes in a repository.
+Deliver tickets or a spec through to a PR ready for review.
 
 #### Prerequisites
 
@@ -22,7 +22,7 @@ Optional planning upfront: run [**bootstrap-planning-skills**](skills/workflow/b
 
 #### Model Invoked
 
-  * [**implement**](skills/workflow/implement) — Branch, build, verify, commit, and create a PR for review.
+  * [**implement**](skills/workflow/implement) — Deliver tickets or a spec through to a PR.
   * [**commit**](skills/workflow/commit) — Commit or prepare commit batches.
   * [**to-pr**](skills/workflow/to-pr) - Create or update an PR in Github for review.
 
