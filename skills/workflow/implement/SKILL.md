@@ -1,8 +1,6 @@
 ---
 name: implement
-description: >-
-  Implement tickets or a spec through to a pull request. Also use for
-  substantive code or configuration changes without one.
+description: Implement tickets or a spec through to a pull request, or substantive code or configuration changes without a ticket.
 ---
 
 # Implement
