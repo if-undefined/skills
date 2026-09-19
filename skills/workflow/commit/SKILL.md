@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Commit or prepare commit batches.
+description: Commit working-tree changes, or prepare commit batches without committing.
 ---
 
 # Commit

@@ -1,11 +1,9 @@
 ---
 name: to-pr
-description: >-
-  Pull requests: creates one from the committed branch diff or updates an
-  existing PR description. Use when opening a PR or refreshing its description.
+description: Pull request: opening one, or refreshing an existing PR description.
 ---
 
-# PR create/update
+# Create or update a pull request
 
 ## Workflow
 
