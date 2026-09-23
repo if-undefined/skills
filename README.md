@@ -1,41 +1,27 @@
 # Skills
 
-A repository of my daily skills. These are a work-in-progress.
-
-Disclaimer; this repository has been inspired by [Matt Pocock's](https://github.com/mattpocock/skills) skills.
+My everyday agent skills. A work in progress, inspired by [Matt Pocock's skills](https://github.com/mattpocock/skills).
 
 ## Available skills
 
-I've split these skills into use-cases and in most cases, will depend on another skill in that same use-case to function. 
+| Skill | Purpose |
+| --- | --- |
+| [implement](skills/workflow/implement/SKILL.md) | Deliver tickets, a spec, or substantive code or configuration changes through to a PR. |
+| [commit](skills/workflow/commit/SKILL.md) | Commit changes or prepare commit batches. |
+| [to-pr](skills/workflow/to-pr/SKILL.md) | Open a GitHub PR or refresh an existing PR description. |
+| [bootstrap-planning-skills](skills/workflow/bootstrap-planning-skills/SKILL.md) | Set up Matt Pocock's planning pipeline in a target repository. |
 
-### Workflow
-
-Deliver tickets or a spec through to a PR ready for review.
-
-#### Prerequisites
-
-Optional planning upfront: run [**bootstrap-planning-skills**](skills/workflow/bootstrap-planning-skills) in your target repo to install Matt Pocock's planning skills (grill → spec → tickets), configure the repo via `/setup-matt-pocock-skills`, and document the pipeline in `AGENTS.md`. Delivery stays in the workflow skills below.
-
-#### User Invoked
-
-  * [**bootstrap-planning-skills**](skills/workflow/bootstrap-planning-skills) — Bootstrap a target repo with Matt Pocock's planning pipeline.
-
-#### Model Invoked
-
-  * [**implement**](skills/workflow/implement) — Deliver tickets or a spec through to a PR.
-  * [**commit**](skills/workflow/commit) — Commit or prepare commit batches.
-  * [**to-pr**](skills/workflow/to-pr) - Create or update an PR in Github for review.
-
+See the [workflow guide](skills/workflow/README.md) for invocation and optional planning setup.
 
 ## Installation
 
-Requires [Node.js](https://nodejs.org/) and the [Skills CLI](https://github.com/vercel-labs/skills).
+Requires [Node.js](https://nodejs.org/). Install with the [Skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
 npx skills add if-undefined/skills
 ```
 
-The CLI will prompt you to choose which skills to install and which agents to install them on.
+Choose which skills to install and which agents to install them for when prompted.
 
 ### Updating
 
