@@ -1,6 +1,6 @@
 ---
 name: to-pr
-description: Pull request: opening one, or refreshing an existing PR description.
+description: Pull requests. Open one or refresh an existing PR description.
 ---
 
 # Create or update a pull request
