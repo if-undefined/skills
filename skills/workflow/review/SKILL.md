@@ -13,9 +13,9 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
 2. **Requirements.** Map each acceptance criterion, or each part of the stated intent, to the code and the test that prove it.
    - Done when: every criterion or part is mapped, or reported as a High finding.
 
-3. **Rules.** Apply every file in `.agents/rules/` to every changed path, and `/react-effects` to changed components. Beyond each rule's wording, weigh the judgement calls:
-   - **Consistency**: the change does what neighbouring code already does: where types, labels, helpers and components live, and how pages, forms, queries and actions are shaped. A new pattern where an existing one fits is a finding.
-   - **Simplest form**: each function is short, single-purpose and low in branching. Every piece of state, prop, parameter, abstraction and file is one the behaviour needs. Code the change left unused is removed.
+3. **Rules.** Apply every file in `.agents/rules/` to every changed path, and each installed unslop skill to the changed files in its stack. Beyond each rule's wording, weigh the judgement calls:
+   - **Consistency**: the change follows the codebase's existing idioms: where each kind of code lives, how its recurring units (handlers, services, queries, components) are shaped, and how things are named. A new pattern where an existing one fits is a finding.
+   - **Simplest form**: each function is short, single-purpose and low in branching. Every piece of state, parameter, type, abstraction and file is one the behaviour needs. Code the change left unused is removed.
    - Done when: every rule file has been applied to every changed path.
 
 4. **Report.** One table, most severe first:
