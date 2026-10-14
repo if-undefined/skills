@@ -15,7 +15,7 @@ It implements and verifies the change, then uses [commit](commit/SKILL.md) to cr
 You can also use the skills independently:
 
 - **commit** — Commit working-tree changes or prepare proposed batches without committing.
-- **review** — Review a branch or pull request against the project rules, and against its ticket or spec.
+- **review** — Review a branch or pull request against the project rules and its ticket or spec.
 - **to-pr** — Open a PR from committed changes or refresh an existing PR description.
 
 All three delivery skills support explicit invocation and automatic selection when relevant.
