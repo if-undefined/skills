@@ -7,14 +7,15 @@ Deliver tickets, a spec, or substantive code or configuration changes through to
 Use [implement](implement/SKILL.md) for the full delivery workflow:
 
 ```text
-implement → commit → to-pr
+implement → commit → review → to-pr
 ```
 
-It implements and verifies the change, then uses [commit](commit/SKILL.md) to create commits and [to-pr](to-pr/SKILL.md) to open or update the PR.
+It implements and verifies the change, then uses [commit](commit/SKILL.md) to create commits, [review](review/SKILL.md) to review the branch, and [to-pr](to-pr/SKILL.md) to open or update the PR with the review report.
 
 You can also use the skills independently:
 
 - **commit** — Commit working-tree changes or prepare proposed batches without committing.
+- **review** — Review a branch or pull request against the project rules and its ticket or spec.
 - **to-pr** — Open a PR from committed changes or refresh an existing PR description.
 
 All three delivery skills support explicit invocation and automatic selection when relevant.
