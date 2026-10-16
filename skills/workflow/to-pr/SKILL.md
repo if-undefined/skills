@@ -22,6 +22,8 @@ For a new PR, use the repository's conventional-commit title shape and name the 
 
 The body contains change information only, without agent attribution. Drop "What's in this branch" when it would repeat Summary. Mark a test-plan checkbox complete only when its passing result is available to the current agent; never infer execution from files or commit messages.
 
+Carry an existing `## Review` section over unchanged unless you were given a newer review report; the next review follows up from it.
+
 ```markdown
 ## Summary
 - <1-3 bullets explaining why the change exists and its user/domain outcome>
