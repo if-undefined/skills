@@ -13,16 +13,16 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
 2. **Requirements.** Map each acceptance criterion, or each part of the stated intent, to the code and the test that prove it. An unmapped criterion or part is a candidate finding.
    - Done when: every criterion or part is mapped or is a candidate.
 
-3. **Defects.** Trace the changed code through its inputs, edge cases, failure paths and callers for wrong behaviour, security holes and data loss. Apply the project instructions in `AGENTS.md`, and any rule files it points to, to every line the change adds or modifies, and each installed unslop skill to the changed files in its stack.
+3. **Defects.** Trace the changed code through its inputs, edge cases, failure paths and callers for wrong behaviour, security holes and data loss. Apply the project instructions in `AGENTS.md`, and any rule files it points to, to every line the change adds or modifies, and each installed unslop skill to the changed files in its stack. Each problem you find is a candidate.
    - Done when: every changed function has been traced, and every instruction applied to every changed line.
 
-4. **Suggestions.** Weigh the judgement calls:
+4. **Suggestions.** Weigh the judgement calls on the code the change adds or modifies:
    - **Consistency**: the change follows the codebase's existing idioms: where each kind of code lives, how its recurring units (handlers, services, queries, components) are shaped, and how things are named. A new pattern where an existing one fits is a candidate.
    - **Simplest form**: each function is short, single-purpose and low in branching. Every piece of state, parameter, type, abstraction and file is one the behaviour needs. Code the change left unused is removed.
    - Done when: both calls have been weighed across the change.
 
 5. **Verify.** Re-read the code behind each candidate. Keep the ones that pass one of these tests, and drop the rest:
-   - **Blocking**: the change introduced it, on a line the change adds or modifies or in code the change breaks. Its evidence is the requirement or rule text it breaks, or an input or state, reachable in the code as it stands, that produces wrong behaviour, a security hole or data loss.
+   - **Blocking**: an unmet requirement, or a problem the change introduced on a line it adds or modifies or in code it breaks. Its evidence is the requirement or rule text it breaks, or an input or state, reachable in the code as it stands, that produces wrong behaviour, a security hole or data loss.
    - **Suggestion**: a candidate from step 4 that names the existing code to match, with its path, or the code the behaviour doesn't need. Keep up to three, the ones that most improve the change.
    - Done when: every kept finding passes its test, with at most three suggestions.
 
