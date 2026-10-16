@@ -17,25 +17,25 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
 2. **Requirements.** In a full review, map each acceptance criterion, or each part of the stated intent, to the code and the test that prove it. An unmapped criterion or part is a candidate finding. In a follow-up, mark each blocking finding in the earlier report as resolved (naming the commit), still open, or waived by the owner.
    - Done when: in a full review, every criterion or part is mapped or is a candidate; in a follow-up, every earlier blocking finding is marked.
 
-3. **Defects.** Trace the changed code through its inputs, edge cases, failure paths and callers for wrong behaviour, security holes and data loss. Apply the project instructions in `AGENTS.md`, and any rule files it points to, to every line the change adds or modifies, and each installed unslop skill to the changed files in its stack. Each problem you find is a candidate.
-   - Done when: every changed function has been traced, and every instruction applied to every changed line.
+3. **Defects.** Trace the changed code through its inputs, edge cases, failure paths and callers for defects: wrong behaviour, security holes and data loss. Apply the project rules in `AGENTS.md`, and in any rule files it points to, to the changed lines, and each installed unslop skill to the changed files in its stack. Each defect or broken rule is a candidate.
+   - Done when: every changed function has been traced, and every rule applied to every changed line.
 
-4. **Suggestions.** Full reviews only. Weigh the judgement calls on the code the change adds or modifies:
+4. **Suggestions.** Full reviews only. Weigh the judgement calls on the changed code:
    - **Consistency**: the change follows the codebase's existing idioms: where each kind of code lives, how its recurring units (handlers, services, queries, components) are shaped, and how things are named. A new pattern where an existing one fits is a candidate.
    - **Simplest form**: each function is short, single-purpose and low in branching. Every piece of state, parameter, type, abstraction and file is one the behaviour needs. Code the change left unused is removed.
-   - Done when: both calls have been weighed across the change.
+   - Done when: every changed path has been weighed against both calls.
 
-5. **Verify.** Re-read the code behind each candidate. Keep the ones that pass one of these tests, and drop the rest:
-   - **Blocking**: an unmet requirement, or a problem the change introduced on a line it adds or modifies or in code it breaks. Its evidence is the requirement or rule text it breaks, or an input or state, reachable in the code as it stands, that produces wrong behaviour, a security hole or data loss.
+5. **Substantiate.** Re-read the code behind each candidate. Keep the ones that pass one of these tests, and drop the rest:
+   - **Blocking**: an unmet requirement, or a defect or broken rule the change introduced, on a changed line or in code the change breaks. Its evidence is the requirement or rule it breaks, or an input or state, reachable in the code as it stands, that triggers the defect.
    - **Suggestion**: a candidate from step 4 that names the existing code to match, with its path, or the code the behaviour doesn't need. Keep up to three, the ones that most improve the change.
-   - Done when: every kept finding passes its test, with at most three suggestions.
+   - Done when: every candidate has been re-read, and every kept finding passes its test.
 
 6. **Report.** Open with the mode, the reviewed commit (`git rev-parse --short HEAD`), the base and the intent's source. A follow-up then lists each earlier blocking finding with its mark. Then one table, blocking findings first:
 
    | #   | Severity | Location | Issue | Evidence |
    | --- | -------- | -------- | ----- | -------- |
 
-   Location is `path:line`, and Severity is Blocking or Suggestion. Evidence is the consequence, requirement, rule or existing code from step 5. Earlier blocking findings that are still open stay in the table.
+   Location is `path:line`, and Severity is Blocking or Suggestion. Earlier blocking findings that are still open stay in the table.
 
    With no findings, write "No findings" in place of the table.
    - Done when: the report opens with its mode and reviewed commit, and every kept or still-open finding is in the table, or "No findings" is stated.

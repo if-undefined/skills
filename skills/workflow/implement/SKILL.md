@@ -22,7 +22,7 @@ description: Implement tickets or a spec through to a pull request. Also use for
 4. **Commit.** Commit completed slices with the `/commit` skill (required, do not commit outside it). Repeat until all intended changes are committed.
    - Done when: `git status` shows a clean tree for the intended work.
 
-5. **Review.** Dispatch a subagent to run the `/review` skill on this branch. Give it the base from step 1, and the ticket or spec path, else the user's ask verbatim. When this run acts on an earlier review, also give it that report and any blocking findings the owner waived. Carry its report unchanged into your final report; the owner decides what to fix.
+5. **Review.** Dispatch a subagent to run the `/review` skill on this branch. Give it the base from step 1, and the ticket or spec path, else the user's ask verbatim. When this run fixes findings from an earlier review, also give it that report and any blocking findings the owner waived. Carry its report unchanged into your final report; the owner decides what to fix.
    - Done when: the review has returned its report.
 
 6. **PR.** Open or update the pull request with the `/to-pr` skill (required, do not create or edit PRs outside it), targeting the base from step 1, with the review report under a `## Review` heading in the body.
