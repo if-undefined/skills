@@ -22,7 +22,7 @@ For a new PR, use the repository's conventional-commit title shape and name the 
 
 The body contains change information only, without agent attribution. Drop "What's in this branch" when it would repeat Summary. Mark a test-plan checkbox complete only when its passing result is available to the current agent; never infer execution from files or commit messages.
 
-Carry an existing `## Review` section over unless you were given a newer review report; the next review follows up from it. A `## Review` table describes `HEAD`: when commits since the review resolved a row, remove it, name the resolving commit beneath the table's intro line, and renumber the remaining rows.
+A `## Review` table describes `HEAD`. Replace the section with a newer review report when you were given one. Otherwise carry it over, removing each row that commits since the review resolved, naming the resolving commit beneath the table's intro line, and renumbering the remaining rows. The next review follows up from the section.
 
 ```markdown
 ## Summary
