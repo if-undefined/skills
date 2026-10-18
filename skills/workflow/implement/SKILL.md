@@ -25,5 +25,5 @@ description: Implement tickets or a spec through to a pull request. Also use for
 5. **Review.** Dispatch a subagent to run the `/review` skill on this branch. Give it the base from step 1, and the ticket or spec path, else the user's ask verbatim. When this run fixes findings from an earlier review, also give it that report and any blocking findings the owner waived. Carry its report unchanged into your final report; the owner decides what to fix.
    - Done when: the review has returned its report.
 
-6. **PR.** Open or update the pull request with the `/to-pr` skill (required, do not create or edit PRs outside it), targeting the base from step 1, with the review report under a `## Review` heading in the body.
+6. **PR.** Open or update the pull request with the `/to-pr` skill (required, do not create or edit PRs outside it), targeting the base from step 1, with the review report under a `## Review` heading in the body. Fixes made after the review go through steps 3 to 5 again, so the table in the body always matches the pushed commits.
    - Done when: `/to-pr` has returned the PR URL.
