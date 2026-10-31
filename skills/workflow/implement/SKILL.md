@@ -13,19 +13,17 @@ description: Implement a change through to a pull request. Use when the user's r
 2. **Build.** Implement against the tickets or spec until their acceptance criteria are met. Prefer the narrowest change that satisfies them. When neither is present, implement the user's ask the same way.
    - Done when: every acceptance criterion (or stated ask) is satisfied (or explicitly deferred by the user).
 
-3. **Prove.** Get proof for every change: evidence you observed yourself in this session, such as command output or a reproduction. Use the most direct proof the change allows:
-   - Reproduce the original failure, apply the fix, then watch the same reproduction pass.
-   - Run the project's checks that cover the changed code, found from the environment, such as package scripts, a Makefile or the CI config.
-   - Add one focused test that fails without the change, when the behavior has none and the project has a test setup.
-   - For UI and runtime behavior, run the app and look at the change.
+3. **Prove.** Get proof for every behavior the diff changes and every refactor. Proof is evidence you observed yourself in this session. Use the first option you can carry out:
+   1. For a fix, reproduce the original failure against the base, then run the same reproduction against the change.
+   2. For a behavior with no test, in a project with a test setup, add one focused test. Watch it fail on the base and pass on the change.
+   3. For UI, run the app and look at the change.
+   4. For a refactor or any other change, run the project's checks that cover the changed code. Find the checks in the environment, such as package scripts, a Makefile or the CI config.
+   5. If you can carry out none of these, record an open check for the PR's test plan.
 
-   A change you cannot prove goes in the PR's test plan as an open check.
-   - Done when: every change in the diff has proof or an open check, and every check you ran passes.
+   **Trace criteria.** Map each acceptance criterion to the test, file, or behavior that proves it. A fixture or artifact a ticket names must be the real one. Fix each unmapped criterion or report it as deferred. When the ticket file tracks status, tick the criteria and update its status.
+   - Done when: every changed behavior and refactor has proof or an open check, every check you ran passes, every criterion is mapped or reported as deferred, and the ticket reflects the result.
 
-   **Trace criteria.** Map each acceptance criterion to the test, file, or behavior that proves it. A fixture or artifact a ticket names must be the real one. Anything unmapped is fixed or reported as deferred. When the ticket file tracks status, tick the criteria and update its status.
-   - Done when: no criterion is unmapped and the ticket reflects the result.
-
-4. **Commit.** Commit completed slices with the `/commit` skill (required, do not commit outside it). Repeat until all intended changes are committed.
+4. **Commit.** Commit the proved changes with the `/commit` skill, and use `/commit` for every commit.
    - Done when: `git status` shows a clean tree for the intended work.
 
 5. **Review.** Dispatch a subagent to run the `/review` skill on this branch. Give it the base from step 1, and the ticket or spec path, else the user's ask verbatim. When an earlier review exists, from this run or an earlier one, also give it that report and the findings declined so far, as findings the owner waived.
@@ -33,5 +31,5 @@ description: Implement a change through to a pull request. Use when the user's r
    Answer every finding in the report. Fix each one you agree with by the smallest change, proved and committed through steps 3 and 4. Decline the rest, each with a one-line reason and its evidence, such as a `path:line`, a test or command output. After a review that led to a fix, dispatch a follow-up review the same way, up to three reviews in all.
    - Done when: every finding is fixed or declined, and the last review led to no fix or was the third.
 
-6. **PR.** Open or update the pull request with the `/to-pr` skill (required, do not create or edit PRs outside it), targeting the base from step 1. Give it a review report for a `## Review` heading in the body: the last review's opening lines, then each finding declined so far that `HEAD` still has, in the review's table with a column for the reason. With none left, the report says "No open findings" in place of the table.
-   - Done when: `/to-pr` has returned the PR URL.
+6. **PR.** Open or update the pull request with the `/to-pr` skill, against the base from step 1, and use `/to-pr` for every PR you create or edit. Give it each open check from step 3 for the test plan, and a review report for a `## Review` heading in the body: the last review's opening lines, then each finding declined so far that `HEAD` still has, in the review's table with a column for the reason. With none left, the report says "No open findings" in place of the table.
+   - Done when: `/to-pr` has returned the PR URL, and the PR body has every open check in its test plan and the review report under `## Review`.
