@@ -13,8 +13,14 @@ description: Implement a change through to a pull request. Use when the user's r
 2. **Build.** Implement against the tickets or spec until their acceptance criteria are met. Prefer the narrowest change that satisfies them. When neither is present, implement the user's ask the same way.
    - Done when: every acceptance criterion (or stated ask) is satisfied (or explicitly deferred by the user).
 
-3. **Verify.** Discover the project's checks from the environment (package scripts, Makefile, CI config, such as tests, lints, typecheck, build) and run them after each substantive slice, and once more when the build step is complete.
-   - Done when: every check the project defines has been run and passes.
+3. **Prove.** Get proof for every change: evidence you observed yourself in this session, such as command output or a reproduction. Use the most direct proof the change allows:
+   - Reproduce the original failure, apply the fix, then watch the same reproduction pass.
+   - Run the project's checks that cover the changed code, found from the environment, such as package scripts, a Makefile or the CI config.
+   - Add one focused test that fails without the change, when the behavior has none and the project has a test setup.
+   - For UI and runtime behavior, run the app and look at the change.
+
+   A change you cannot prove goes in the PR's test plan as an open check.
+   - Done when: every change in the diff has proof or an open check, and every check you ran passes.
 
    **Trace criteria.** Map each acceptance criterion to the test, file, or behavior that proves it. A fixture or artifact a ticket names must be the real one. Anything unmapped is fixed or reported as deferred. When the ticket file tracks status, tick the criteria and update its status.
    - Done when: no criterion is unmapped and the ticket reflects the result.
