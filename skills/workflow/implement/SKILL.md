@@ -1,6 +1,6 @@
 ---
 name: implement
-description: Implement tickets or a spec through to a pull request. Also use for substantive code or configuration changes without either.
+description: Implement a change through to a pull request. Use when the user's request says "implement".
 ---
 
 # Implement

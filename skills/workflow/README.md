@@ -1,10 +1,10 @@
 # Workflow
 
-Deliver tickets, a spec, or substantive code or configuration changes through to a PR ready for review.
+Deliver a change through to a draft PR when a request says "implement".
 
 ## Delivery
 
-Use [implement](implement/SKILL.md) for the full delivery workflow:
+Use [implement](implement/SKILL.md) for the full delivery workflow. It runs when a request says "implement", so a request without the word gets a direct edit instead:
 
 ```text
 implement → commit → review → to-pr
