@@ -10,7 +10,7 @@ Use [implement](implement/SKILL.md) for the full delivery workflow. It runs when
 implement → commit → review → to-pr
 ```
 
-It implements and verifies the change, then uses [commit](commit/SKILL.md) to create commits, [review](review/SKILL.md) to review the branch, and [to-pr](to-pr/SKILL.md) to open or update the PR with the review report.
+It implements and proves the change, then uses [commit](commit/SKILL.md) to create commits and [review](review/SKILL.md) to review the branch. It fixes the findings it agrees with and reviews again, up to three reviews, then uses [to-pr](to-pr/SKILL.md) to open or update the PR with the findings it declined.
 
 You can also use the skills independently:
 

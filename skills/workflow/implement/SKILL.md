@@ -28,8 +28,10 @@ description: Implement a change through to a pull request. Use when the user's r
 4. **Commit.** Commit completed slices with the `/commit` skill (required, do not commit outside it). Repeat until all intended changes are committed.
    - Done when: `git status` shows a clean tree for the intended work.
 
-5. **Review.** Dispatch a subagent to run the `/review` skill on this branch. Give it the base from step 1, and the ticket or spec path, else the user's ask verbatim. When this run fixes findings from an earlier review, also give it that report and any blocking findings the owner waived. Carry its report unchanged into your final report; the owner decides what to fix.
-   - Done when: the review has returned its report.
+5. **Review.** Dispatch a subagent to run the `/review` skill on this branch. Give it the base from step 1, and the ticket or spec path, else the user's ask verbatim. When an earlier review exists, from this run or an earlier one, also give it that report and the findings declined so far, as findings the owner waived.
 
-6. **PR.** Open or update the pull request with the `/to-pr` skill (required, do not create or edit PRs outside it), targeting the base from step 1, with the review report under a `## Review` heading in the body. Fixes made after the review go through steps 3 to 5 again, so the table in the body always matches the pushed commits.
+   Answer every finding in the report. Fix each one you agree with by the smallest change, proved and committed through steps 3 and 4. Decline the rest, each with a one-line reason and its evidence, such as a `path:line`, a test or command output. After a review that led to a fix, dispatch a follow-up review the same way, up to three reviews in all.
+   - Done when: every finding is fixed or declined, and the last review led to no fix or was the third.
+
+6. **PR.** Open or update the pull request with the `/to-pr` skill (required, do not create or edit PRs outside it), targeting the base from step 1. Give it a review report for a `## Review` heading in the body: the last review's opening lines, then the findings you declined, in the review's table with a column for your reason. With nothing declined, the report says "No open findings" in place of the table. Fixes made after the review go through steps 3 to 5 again, so the table in the body always matches the pushed commits.
    - Done when: `/to-pr` has returned the PR URL.
