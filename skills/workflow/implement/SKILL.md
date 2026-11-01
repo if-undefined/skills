@@ -26,7 +26,7 @@ description: Implement a change through to a pull request. Use when the user's r
 4. **Commit.** Commit the proved changes with the `/commit` skill, and use `/commit` for every commit.
    - Done when: `git status` shows a clean tree for the intended work.
 
-5. **Review.** Dispatch a subagent to run the `/review` skill on this branch. Give it the base from step 1, and the ticket or spec path, else the user's ask verbatim. When earlier reviews exist, from this run or an earlier one, also give it the latest report and every finding declined so far, each with its reason.
+5. **Review.** Dispatch a subagent to run the `/review` skill on this branch. Give it the base from step 1, and the ticket or spec path, else the user's ask verbatim. When this run has an earlier review, or the open PR has a `## Review` section, also give it the latest report and every finding declined so far, each with its reason.
 
    Answer every finding in the report. Fix each one you agree with by the narrowest change, proved and committed through steps 3 and 4. Decline the rest, each with a one-line reason and its evidence, such as a `path:line`, a test or command output. After a review that led to a fix, dispatch a follow-up review the same way, up to three reviews per run.
    - Done when: every finding is fixed or declined, and the run's last review led to no fix or was its third.
