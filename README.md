@@ -6,7 +6,7 @@ My everyday agent skills. A work in progress, inspired by [Matt Pocock's skills]
 
 | Skill | Purpose |
 | --- | --- |
-| [implement](skills/workflow/implement/SKILL.md) | Deliver tickets, a spec, or substantive code or configuration changes through to a PR. |
+| [implement](skills/workflow/implement/SKILL.md) | Deliver a change through to a draft PR. |
 | [commit](skills/workflow/commit/SKILL.md) | Commit changes or prepare commit batches. |
 | [review](skills/workflow/review/SKILL.md) | Review a branch or pull request against the project rules and its ticket or spec. |
 | [to-pr](skills/workflow/to-pr/SKILL.md) | Open a draft GitHub PR or refresh an existing PR description. |

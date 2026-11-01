@@ -18,7 +18,7 @@ description: Commit working-tree changes, or prepare commit batches without comm
 4. Stage only the files for the current batch.
 5. Commit with a message in the format below. If a pre-commit hook fails, address the violations it reports and retry.
 6. Repeat for additional batches if needed.
-7. Stop after commit creation. Do not push unless the user explicitly asks.
+7. Push only when the user explicitly asks.
 
 ## Commit message format
 
