@@ -13,9 +13,9 @@ description: Implement a change through to a pull request. Use when the user's r
 2. **Build.** Implement against the tickets or spec until their acceptance criteria are met. Prefer the narrowest change that satisfies them. When neither is present, implement the user's ask the same way.
    - Done when: every acceptance criterion (or stated ask) is satisfied (or explicitly deferred by the user).
 
-3. **Prove.** Get proof for every behavior the diff changes and every refactor. Proof is evidence you observed yourself in this session. Use the first option you can carry out:
-   1. For a fix, reproduce the original failure against the base, then run the same reproduction against the change.
-   2. For a behavior with no test, in a project with a test setup, add one focused test. Watch it fail on the base and pass on the change.
+3. **Prove.** Get proof for every behavior the uncommitted change alters and every refactor in it. Proof is evidence you observed yourself in this session. Use the first option you can carry out:
+   1. For a fix, reproduce the original failure without the change, then run the same reproduction with it.
+   2. For a behavior with no test, in a project with a test setup, add one focused test. Watch it fail without the change and pass with it.
    3. For UI, run the app and look at the change.
    4. For a refactor or any other change, run the project's checks that cover the changed code. Find the checks in the environment, such as package scripts, a Makefile or the CI config.
    5. If you can carry out none of these, record an open check for the PR's test plan.
