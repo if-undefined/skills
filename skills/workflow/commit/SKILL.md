@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Commit working-tree changes, or prepare commit batches without committing.
+description: Make every commit with this skill, including a commit that is one step of a larger task, or propose commit batches without committing.
 ---
 
 # Commit
