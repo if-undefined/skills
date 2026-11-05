@@ -14,7 +14,7 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
    Add the paths in `git status`, untracked files included, and read each changed path in full.
    - Done when: the mode is chosen, every changed path has been read in full, and the intent's source is named (ticket path, spec path, the given ask, or the PR description).
 
-2. **Requirements.** In a full review, map each acceptance criterion, or each part of the stated intent, to the code and the test that prove it. An unmapped criterion or part is a candidate finding. In a follow-up, mark each blocking finding in the earlier report as resolved (naming the commit), still open, or waived by the owner.
+2. **Requirements.** In a full review, map each acceptance criterion, or each part of the stated intent, to the code and the test that prove it. An unmapped criterion or part is a candidate finding. In a follow-up, mark each blocking finding in the earlier report as resolved by a named commit, as still open, or as declined when the earlier report or the request gives a reason for declining it.
    - Done when: in a full review, every criterion or part is mapped or is a candidate; in a follow-up, every earlier blocking finding is marked.
 
 3. **Defects.** Trace the changed code through its inputs, edge cases, failure paths and callers for defects: wrong behaviour, security holes and data loss. Apply the project rules in `AGENTS.md`, and in any rule files it points to, to the changed lines, and each installed unslop skill to the changed files in its stack. Each defect or broken rule is a candidate.
