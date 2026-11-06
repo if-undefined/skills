@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Commit working-tree changes, or prepare commit batches without committing.
+description: Use for every commit, of any size.
 ---
 
 # Commit
@@ -11,25 +11,23 @@ description: Commit working-tree changes, or prepare commit batches without comm
    - `git status`
    - `git diff` for unstaged changes
    - `git diff --staged` for staged changes
-   - `git log --oneline -n 10` to match existing commit style
-   If the working tree includes unexpected or unrelated changes, pause and confirm how to proceed.
-2. Produce an ordered list of batches — each with its files and commit message — before staging. One concern per commit. Match completed todos, milestones, or coherent slices of work. If a subject line cannot carry the purpose, split the batch.
-3. If the user only wants proposed batches, present the list, then stop.
-4. Stage only the files for the current batch.
-5. Commit with a message in the format below. If a pre-commit hook fails, address the violations it reports and retry.
-6. Repeat for additional batches if needed.
-7. Push only when the user explicitly asks.
+   - `git log --oneline -n 10` to match the wording of recent subjects
+2. Batch the changes that belong to the current task, or, with no task, every change that belongs in the project's history. Produce an ordered list of batches — each with its files and commit message — before staging. One concern per commit. Match completed todos, milestones, or coherent slices of work. If a subject line cannot carry the purpose, split the batch.
+3. Stage only the files for the current batch.
+4. Commit with a message in the format below. If a pre-commit hook fails, address the violations it reports and retry.
+5. Repeat for additional batches if needed.
+6. Push only when the user explicitly asks.
 
 ## Commit message format
 
-Use conventional commits: `<type>(<scope>): <subject>` in imperative mood.
+Use conventional commits: `<type>: <subject>` in imperative mood.
 
 Keep messages to a single line. Focus on the purpose of the change, not a file-by-file changelog.
 
 **Example:**
 
 ```
-feat(auth): implement JWT-based authentication
+feat: implement JWT-based authentication
 ```
 
 ## Guardrails
