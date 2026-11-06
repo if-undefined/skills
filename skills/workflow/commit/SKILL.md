@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Trigger for every commit, regardless of task state or size. Also prepares commit batches without committing.
+description: Every git commit goes through this skill. Invoke it before running `git commit`, including mid-task, inside another skill, and for one-line changes. Also prepares commit batches without committing.
 ---
 
 # Commit
@@ -12,7 +12,7 @@ description: Trigger for every commit, regardless of task state or size. Also pr
    - `git diff` for unstaged changes
    - `git diff --staged` for staged changes
    - `git log --oneline -n 10` to match the wording of recent subjects
-   Read the changes to work out the work they make up. Leave out paths unrelated to that work, such as OS or editor files and local config, without asking about them.
+   Commit the changes that pertain to the ticket or ask. Leave every other path out of the batches, without asking about it.
 2. Produce an ordered list of batches — each with its files and commit message — before staging. One concern per commit. Match completed todos, milestones, or coherent slices of work. If a subject line cannot carry the purpose, split the batch.
 3. If the user only wants proposed batches, present the list, then stop.
 4. Stage only the files for the current batch.
