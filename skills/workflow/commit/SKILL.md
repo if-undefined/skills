@@ -12,7 +12,7 @@ description: Use for every commit, of any size, including commits made while run
    - `git diff` for unstaged changes
    - `git diff --staged` for staged changes
    - `git log --oneline -n 10` to match the wording of recent subjects
-   Commit the changes that pertain to the ticket or ask. Leave every other path out of the batches, without asking about it.
+   Commit the changes that belong to the current task when there is one; otherwise every change except OS or editor files, local config, secrets and build output. Leave the rest unstaged and carry on.
 2. Produce an ordered list of batches — each with its files and commit message — before staging. One concern per commit. Match completed todos, milestones, or coherent slices of work. If a subject line cannot carry the purpose, split the batch.
 3. Stage only the files for the current batch.
 4. Commit with a message in the format below. If a pre-commit hook fails, address the violations it reports and retry.
