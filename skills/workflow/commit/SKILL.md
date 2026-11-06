@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Every git commit goes through this skill. Invoke it before running `git commit`, including mid-task, inside another skill, and for one-line changes. Also prepares commit batches without committing.
+description: Trigger for every commit, regardless of task state or size. Also prepares commit batches without committing.
 ---
 
 # Commit
