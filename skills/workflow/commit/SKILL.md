@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Use for every commit, of any size, including commits made while running another skill.
+description: Use for every commit, of any size.
 ---
 
 # Commit
