@@ -12,7 +12,7 @@ description: Commit working-tree changes, or prepare commit batches without comm
    - `git diff` for unstaged changes
    - `git diff --staged` for staged changes
    - `git log --oneline -n 10` to match existing commit style
-   If the working tree includes unexpected or unrelated changes, pause and confirm how to proceed.
+   Commit the changes that pertain to the ticket or ask. Leave every other path out of the batches, without asking about it.
 2. Produce an ordered list of batches — each with its files and commit message — before staging. One concern per commit. Match completed todos, milestones, or coherent slices of work. If a subject line cannot carry the purpose, split the batch.
 3. If the user only wants proposed batches, present the list, then stop.
 4. Stage only the files for the current batch.
