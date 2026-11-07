@@ -8,7 +8,7 @@ description: Implement a change through to a pull request. Use when the user's r
 ## Steps
 
 1. **Branch** from this work's base, or stay on this work's branch.
-2. **Build** the change, proving each behaviour it changes.
+2. **Build** the change, proving each behavior it changes.
 3. **Verify** with the project's checks, and trace every acceptance criterion.
 4. **Commit** the proved changes with the `/commit` skill, and use `/commit` for every commit. Done when `git status` shows a clean tree for the intended work.
 5. **Review** the branch with `/review` in a subagent, fixing or declining every finding.
@@ -18,8 +18,8 @@ description: Implement a change through to a pull request. Use when the user's r
 
 When HEAD is already this work's branch, stay on it; its base is the open PR's base, else the base chosen below. Otherwise choose a base and branch from it:
 
-- **Base:** the remote default branch (`origin/<default>`) after a fetch, unless this work builds on commits that exist only on another unmerged branch (a **Blocked by** ticket's branch, or the branch checked out now). Then base on that branch.
-- **Create:** `git switch --no-track -c <name> <base>`; `--no-track` keeps a remote base from becoming the push target. Name it from the ticket id plus a short kebab slug when a ticket exists (e.g. `42-add-login`); otherwise a kebab slug from the change intent. Earlier work arrives only through the base.
+- **Base**: the remote default branch (`origin/<default>`) after a fetch, unless this work builds on commits that exist only on another unmerged branch (a **Blocked by** ticket's branch, or the branch checked out now). Then base on that branch.
+- **Create**: `git switch --no-track -c <name> <base>`; `--no-track` keeps a remote base from becoming the push target. Name it from the ticket id plus a short kebab slug when a ticket exists (e.g. `42-add-login`); otherwise a kebab slug from the change intent. Earlier work arrives only through the base.
 
 Done when: HEAD is on this work's branch, its name matches that pattern, and `git merge-base --is-ancestor <base> HEAD` succeeds (a read-only check that HEAD contains every commit on the base).
 
