@@ -7,8 +7,8 @@ description: Review a branch or pull request against the project rules and its t
 
 Read the change **cold**: as a reviewer who did not write it, trusting the diff and the files over any summary of them. Report what is worth changing before merge; the reader decides what to fix. A sound branch gets "No findings", and that is a complete review.
 
-1. **Scope.** Given a pull request that isn't checked out, check it out with `gh pr checkout <number>`. Resolve the base: the base you were given, else the open PR's base, else the default branch. Fetch, and use the remote ref (`origin/<branch>`) for the last two. Establish the intent: the ticket or spec the branch implements, else the ask you were given or the PR description. Find any earlier report: the one you were given, else the `## Review` section of the open PR's body. Then choose the mode, which sets the change under review:
-   - **Follow-up**: the earlier report names the commit it reviewed, and `git merge-base --is-ancestor <reviewed> HEAD` succeeds. The change is the branch's own commits since that review: `git log -p --no-merges <reviewed>..HEAD ^<base>`.
+1. **Scope.** Given a pull request that isn't checked out, check it out with `gh pr checkout <number>`. Resolve the base: the base you were given, else the open PR's base, else the default branch. Fetch, and use the remote ref (`origin/<branch>`) for the last two. Establish the intent: the ticket or spec the branch implements, else the ask you were given or the PR description. Then choose the mode, which sets the change under review:
+   - **Follow-up**: your request includes an earlier report that names the commit it reviewed, `git merge-base --is-ancestor <reviewed> HEAD` succeeds, and `<reviewed>..HEAD` has commits. The change is the branch's own commits since that review: `git log -p --no-merges <reviewed>..HEAD ^<base>`.
    - **Full review**: otherwise, or when asked for one. The change is the three-dot diff against the base.
 
    Add the paths in `git status`, untracked files included, and read each changed path in full.
