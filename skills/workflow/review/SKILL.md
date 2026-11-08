@@ -23,7 +23,7 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
 4. **Suggestions.** Full reviews only. Weigh the judgement calls on the changed code:
    - **Consistency**: the change follows the codebase's existing idioms: where each kind of code lives, how its recurring units (handlers, services, queries, components) are shaped, and how things are named. A new pattern where an existing one fits is a candidate.
    - **Simplest form**: each function is short, single-purpose and low in branching. Every piece of state, parameter, type, abstraction and file is one the behaviour needs. Code the change left unused is removed.
-   - **Asked for**: each behaviour the change adds is one the intent asks for. A behaviour the intent leaves out is a candidate.
+   - **Asked for**: when a ticket, spec or ask describes the change, each behaviour the change adds is one it asks for. Added behaviour it doesn't mention is a candidate.
    - Done when: every changed path has been weighed against all three calls.
 
 5. **Substantiate.** Re-read the code behind each candidate. Keep the ones that pass one of these tests, and drop the rest:
