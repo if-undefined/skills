@@ -5,6 +5,8 @@ description: Review a branch or pull request against the project rules and its t
 
 # Review
 
+When a user invokes this skill directly, dispatch a fresh subagent to run it, giving it their request verbatim and telling it that it was dispatched, then relay its report unchanged. A dispatched reviewer starts at step 1.
+
 Read the change **cold**: as a reviewer who did not write it, trusting the diff and the files over any summary of them. Report what is worth changing before merge; the reader decides what to fix. A sound branch gets "No findings", and that is a complete review.
 
 1. **Scope.** If you were given a pull request, check it out. Then establish:
