@@ -11,7 +11,7 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
    - **Follow-up**: your request includes an earlier report that names the commit it reviewed, `git merge-base --is-ancestor <reviewed> HEAD` succeeds, and `git log --no-merges <reviewed>..HEAD ^<base>` lists commits. The change is those commits, the branch's own since that review; read them with `git log -p` over the same range.
    - **Full review**: otherwise, or when asked for one. The change is the three-dot diff against the base.
 
-   Add the `git status` paths, untracked files included, that the change touches or the intent covers, or all of them when the change is empty, and read each changed path in full. With no changed paths, stop and report "Nothing to review", naming the base and `HEAD`.
+   Add the `git status` paths, untracked files included, that the change touches or the intent covers, or all of them when a full review's change is empty, and read each changed path in full. With no changed paths, stop and report "Nothing to review", naming the base and `HEAD`.
    - Done when: the mode is chosen, every changed path has been read in full, and the intent's source is named (ticket path, spec path, the given ask, or the PR description).
 
 2. **Requirements.** In a full review, map each acceptance criterion, or each part of the stated intent, to the code and the test that prove it. An unmapped criterion or part is a candidate finding. In a follow-up, mark each blocking finding in the earlier report as resolved by a named commit, as still open, or as declined when the earlier report or the request gives a reason for declining it.
