@@ -11,7 +11,7 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
    - **Base**: the base you were given, else the latest remote copy of the open PR's base, else of the default branch.
    - **Intent**: the ticket or spec the branch implements, else the ask you were given or the PR description.
    - **Mode**: **Follow-up** when your request includes an earlier report and the commit it reviewed is still in the branch's history. Otherwise **Full review**.
-   - **Change**: in a full review, everything the branch changes since it left the base. In a follow-up, only the commits the branch itself added since the reviewed commit, excluding merges and anything from the base. In both, add uncommitted work, including untracked files.
+   - **Change**: in a full review, everything the branch changes since it left the base. In a follow-up, only the commits the branch itself added since the reviewed commit, excluding merges and anything from the base. In both, add the uncommitted work, including untracked files, in paths the change touches or the intent covers. When a full review's change is empty, add all uncommitted work.
 
    Read each changed path in full. With no changed paths, stop and report "Nothing to review", naming the base and `HEAD`.
    - Done when: the mode is chosen, every changed path has been read in full, and the intent's source is named (ticket path, spec path, the given ask, or the PR description).
