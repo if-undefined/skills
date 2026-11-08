@@ -15,7 +15,7 @@ It implements and proves the change, then uses [commit](commit/SKILL.md) to crea
 You can also use the skills independently:
 
 - **commit** — Commit working-tree changes.
-- **review** — Review a branch or pull request against the project rules and its ticket or spec. On a PR it has reviewed before, it checks only the commits since; ask for a full review to start over.
+- **review** — Review a branch or pull request against the project rules and its ticket or spec. It reviews the whole branch; given an earlier report, it checks only the commits made since that review.
 - **to-pr** — Open a PR from committed changes or refresh an existing PR description.
 
 All three delivery skills support explicit invocation and automatic selection when relevant.
