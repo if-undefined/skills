@@ -23,11 +23,12 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
 4. **Suggestions.** Full reviews only. Weigh the judgement calls on the changed code:
    - **Consistency**: the change follows the codebase's existing idioms: where each kind of code lives, how its recurring units (handlers, services, queries, components) are shaped, and how things are named. A new pattern where an existing one fits is a candidate.
    - **Simplest form**: each function is short, single-purpose and low in branching. Every piece of state, parameter, type, abstraction and file is one the behaviour needs. Code the change left unused is removed.
-   - Done when: every changed path has been weighed against both calls.
+   - **Asked for**: each behaviour the change adds is one the intent asks for. A behaviour the intent leaves out is a candidate.
+   - Done when: every changed path has been weighed against all three calls.
 
 5. **Substantiate.** Re-read the code behind each candidate. Keep the ones that pass one of these tests, and drop the rest:
    - **Blocking**: an unmet requirement, or a defect or broken rule the change introduced, on a changed line or in code the change breaks. Its evidence is the requirement or rule it breaks, or an input or state, reachable in the code as it stands, that triggers the defect.
-   - **Suggestion**: a candidate from step 4 that names the existing code to match, with its path, or the code the behaviour doesn't need. Keep up to three, the ones that most improve the change.
+   - **Suggestion**: a candidate from step 4 that names the existing code to match, with its path, the code the behaviour doesn't need, or the behaviour the intent doesn't ask for. Keep up to three, the ones that most improve the change.
    - Done when: every candidate has been re-read, and every kept finding passes its test.
 
 6. **Report.** Open with the mode, the reviewed commit (`git rev-parse --short HEAD`), the base and the intent's source. A follow-up then lists each earlier blocking finding with its mark. Then one table, blocking findings first:
