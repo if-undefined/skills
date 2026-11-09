@@ -15,8 +15,8 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
 2. **Requirements**: map the intent to the code, or mark the earlier report's blocking findings.
 3. **Defects**: trace the changed code and apply the project rules.
 4. **Suggestions**: weigh the judgement calls, in full reviews only.
-5. **Substantiate**: re-read each candidate and keep only the ones with evidence.
-6. **Report** the mode, the reviewed commit and a table of findings.
+5. **Substantiate**: re-read each candidate and keep the ones that pass their test.
+6. **Report**: open with the review's details, then table the findings.
 
 ## Scope
 
