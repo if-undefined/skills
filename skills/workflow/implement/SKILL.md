@@ -35,7 +35,7 @@ Done when: every acceptance criterion, or each part of the stated ask, is satisf
 
 Run the project's checks that cover the changed code. A check that fails the same way in a temporary worktree at the last commit gets an open check.
 
-Map each acceptance criterion to the test, file, or behavior that proves it. A fixture or artifact a ticket names must be the real one. Fix each unmapped criterion or defer it as in Build. When the ticket file tracks status, tick the criteria and update its status.
+**Trace criteria.** Map each acceptance criterion to the test, file, or behavior that proves it. A fixture or artifact a ticket names must be the real one. Fix each unmapped criterion or defer it as in Build. When the ticket file tracks status, tick the criteria and update its status.
 
 Done when: every project check that covers the changed code has run and passes or has an open check, every criterion is mapped or deferred, and the ticket reflects the result.
 
