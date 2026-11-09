@@ -12,7 +12,7 @@ Read the change **cold**: as a reviewer who did not write it, trusting the diff 
 ## Steps
 
 1. **Scope**: resolve the base and intent, choose the mode, and read every changed path.
-2. **Requirements**: map the intent to the code, or mark the earlier report's blocking findings.
+2. **Requirements**: map the intent to the code, or mark the earlier report's Outstanding findings.
 3. **Defects**: trace the changed code and apply the project rules.
 4. **Suggestions**: weigh the judgement calls, in full reviews only.
 5. **Substantiate**: re-read each candidate and keep the ones that pass their test.
@@ -33,9 +33,9 @@ Done when: the mode is chosen, every changed path has been read in full, and the
 
 ## Requirements
 
-In a full review, map each acceptance criterion, or each part of the stated intent, to the code and the test that prove it. An unmapped criterion or part is a candidate finding. In a follow-up, mark each blocking finding in the earlier report as resolved by a named commit, as still open, or as declined when the earlier report or the request gives a reason for declining it.
+In a full review, map each acceptance criterion, or each part of the stated intent, to the code and the test that prove it. An unmapped criterion or part is a candidate finding. In a follow-up, mark each Outstanding finding in the earlier report as resolved by a named commit, as still open, or as declined when the earlier report or the request gives a reason for declining it.
 
-Done when: in a full review, every criterion or part is mapped or is a candidate; in a follow-up, every earlier blocking finding is marked.
+Done when: in a full review, every criterion or part is mapped or is a candidate; in a follow-up, every earlier Outstanding finding is marked.
 
 ## Defects
 
@@ -64,13 +64,15 @@ Done when: every candidate has been re-read, and every kept finding passes its t
 
 ## Report
 
-Open with the mode, the reviewed commit (`git rev-parse --short HEAD`), the base and the intent's source. A follow-up then lists each earlier blocking finding with its mark. Then one table, blocking findings first:
+Open with the mode, the reviewed commit (`git rev-parse --short HEAD`), the base and the intent's source. A follow-up then lists each earlier Outstanding finding with its mark. Then one table:
 
-| #   | Severity | Location | Issue | Evidence |
-| --- | -------- | -------- | ----- | -------- |
+| #   | Severity | Location | Issue | Evidence | Status |
+| --- | -------- | -------- | ----- | -------- | ------ |
 
-Location is `path:line`, and Severity is Blocking or Suggestion. Earlier blocking findings that are still open stay in the table.
+Location is `path:line`, Severity is Blocking or Suggestion, and Status is Outstanding or Resolved. Each new finding is Outstanding. A full review lists blocking findings first.
+
+A follow-up keeps every row of the earlier table, in order and under its number. A finding marked resolved becomes Resolved; a still-open or declined finding stays Outstanding. New findings follow, numbered on from the highest.
 
 With no findings, write "No findings" in place of the table.
 
-Done when: the report opens with its mode and reviewed commit, and every kept or still-open finding is in the table, or "No findings" is stated.
+Done when: the report opens with its mode and reviewed commit, and every kept finding and earlier row is in the table, or "No findings" is stated.

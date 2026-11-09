@@ -57,6 +57,6 @@ Done when: a review has returned its report, every finding is fixed or declined,
 
 Open or update the pull request with the `/to-pr` skill, against the base from Branch, and use `/to-pr` for every PR you create or edit. Give it each open check from Build and Verify and each deferral with its reason for the test plan, and a review report for a `## Review` heading in the body.
 
-The report opens with the last review's mode, reviewed commit, base and intent's source. Then comes a table of every finding declined so far that `HEAD` still has, with the review table's columns plus a Reason column. With no declined finding left, the report says "No open findings" in place of the table.
+The report opens with the last review's mode, reviewed commit, base and intent's source. Then comes a table of every finding so far, with the review table's columns plus a Reason column. A finding `HEAD` no longer has is Resolved, and a declined finding `HEAD` still has is Outstanding with its reason. With no finding so far, the report says "No findings" in place of the table.
 
 Done when: `/to-pr` has returned the PR URL, and the PR body has every open check and deferral in its test plan, and the review report under `## Review`.
