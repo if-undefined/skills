@@ -18,7 +18,7 @@ All installs and writes happen in the target repo — not in `if-undefined/skill
 2. **Install** — In the target repo, run:
 
    ```bash
-   pnpm dlx skills@latest add mattpocock/skills \
+   pnpm dlx skills@1.7.6 add mattpocock/skills#4ae2317ddb22b046e26455e4f9c9b3aaaf62212d \
      --skill grill-with-docs \
      --skill grilling \
      --skill domain-modeling \
@@ -27,6 +27,8 @@ All installs and writes happen in the target repo — not in `if-undefined/skill
      --skill setup-matt-pocock-skills \
      -y
    ```
+
+   Run both pins as written, so every target repo gets the same code. The CLI honours a commit only in the `#<sha>` form; with `@<sha>` it installs the latest upstream.
 
    Do not vendor or copy skill bodies into the target repo — the CLI installs them at runtime.
    - Done when: six skill folders exist under `.agents/skills/` and `skills-lock.json` is updated.
