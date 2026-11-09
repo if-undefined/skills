@@ -10,7 +10,7 @@ description: Implement a change through to a pull request. Use when the user's r
 1. **Branch** from this work's base, or stay on this work's branch.
 2. **Build** the change, proving each behavior it changes.
 3. **Verify** with the project's checks, and trace every acceptance criterion.
-4. **Commit** the proved changes with the `/commit` skill, and use `/commit` for every commit. Done when `git status` shows a clean tree for the intended work.
+4. **Commit** the proved changes with the `/commit` skill.
 5. **Review** the branch with `/review` in a subagent, fixing or declining every finding.
 6. **PR**: open or update the pull request with the `/to-pr` skill.
 
@@ -35,9 +35,15 @@ Done when: every acceptance criterion, or each part of the stated ask, is satisf
 
 Run the project's checks that cover the changed code. A check that fails the same way in a temporary worktree at the last commit gets an open check.
 
-Map each acceptance criterion to the test, file, or behavior that proves it. A fixture or artifact a ticket names must be the real one. Fix each unmapped criterion or defer it as in Build. When the ticket file tracks status, tick the criteria and update its status.
+**Trace criteria.** Map each acceptance criterion to the test, file, or behavior that proves it. A fixture or artifact a ticket names must be the real one. Fix each unmapped criterion or defer it as in Build. When the ticket file tracks status, tick the criteria and update its status.
 
 Done when: every project check that covers the changed code has run and passes or has an open check, every criterion is mapped or deferred, and the ticket reflects the result.
+
+## Commit
+
+Commit the proved changes with the `/commit` skill, and use `/commit` for every commit.
+
+Done when: `git status` shows a clean tree for the intended work.
 
 ## Review
 
